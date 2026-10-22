@@ -1,0 +1,391 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --site-background: #e6e8e4;
+  --site-surface: #f4f5f2;
+  --site-ink: #25332c;
+  --site-muted: #59675f;
+  --site-line: #dce4dd;
+  --site-accent: #806118;
+}
+
+@layer base {
+  html {
+    background: var(--site-background);
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-dark;
+    background: var(--site-background);
+    color: var(--site-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-wide;
+    color: var(--site-ink);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--site-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4cec6;
+  border-radius: 4px;
+  border: 1px solid var(--site-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(31, 35, 45, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-navbar {
+  background: rgba(11, 12, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.premium-navbar {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.68),
+    rgba(12, 12, 12, 0.42)
+  );
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border-bottom: 1px solid rgba(239, 224, 189, 0.13);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.premium-navbar-scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 4, 4, 0.91),
+    rgba(11, 10, 8, 0.82)
+  );
+  border-bottom-color: rgba(239, 224, 189, 0.2);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  background: var(--site-background);
+  color: var(--site-ink);
+}
+
+.site-shell::before,
+.site-shell::after {
+  display: none;
+}
+
+/* Grid overlay background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(239, 224, 189, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(245, 230, 200, 0.08),
+      transparent 24rem
+    );
+}
+
+/* Page Transition Wrapper */
+.page-transition-wrapper {
+  min-height: calc(100vh - 80px);
+}
+
+/* Text Gradient */
+.text-gold-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#d4af37] via-[#f5e6c8] to-[#b8942b];
+}
+
+/* Hover glow effect */
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Light palette for public pages; the admin area keeps its own theme. */
+.site-shell .bg-dark,
+.site-shell .bg-dark-accent {
+  background-color: var(--site-background) !important;
+}
+
+.site-shell .bg-dark-card {
+  background-color: var(--site-surface) !important;
+}
+
+.site-shell [class*="bg-[#090909]"] {
+  background-color: var(--site-surface) !important;
+  border-color: var(--site-line);
+}
+
+.site-shell .bg-grid-pattern {
+  background-color: var(--site-background) !important;
+  background-image: none !important;
+}
+
+.site-shell [class*="border-dark-border"] {
+  border-color: var(--site-line) !important;
+}
+
+.site-shell .text-white {
+  color: var(--site-ink) !important;
+}
+
+.site-shell .text-gray-100,
+.site-shell .text-gray-200,
+.site-shell .text-gray-300 {
+  color: #435149 !important;
+}
+
+.site-shell .text-gray-400,
+.site-shell .text-gray-500,
+.site-shell .text-gray-600,
+.site-shell .text-gray-700 {
+  color: var(--site-muted) !important;
+}
+
+.site-shell .text-primary {
+  color: var(--site-accent) !important;
+}
+
+.site-shell .glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(37, 51, 44, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 12px 32px rgba(37, 51, 44, 0.06);
+}
+
+.site-shell .premium-navbar,
+.site-shell .premium-navbar-scrolled {
+  background: rgba(230, 232, 228, 0.98);
+  border-bottom-color: rgba(212, 175, 55, 0.24);
+  box-shadow: 0 10px 30px rgba(13, 23, 19, 0.2);
+}
+
+.site-shell .premium-navbar-scrolled {
+  background: rgba(214, 203, 166, 0.98);
+  border-bottom-color: rgba(212, 175, 55, 0.3);
+}
+
+.site-shell .premium-navbar a > span {
+  color: #000000;
+}
+
+.site-shell .premium-navbar .text-white {
+  color: #000000 !important;
+}
+
+.site-shell .premium-navbar .text-primary {
+  color: #76621e !important;
+}
+
+.site-shell .premium-navbar #mobile-navigation {
+  background: rgba(13, 23, 19, 0.98);
+  border-bottom-color: rgba(212, 175, 55, 0.24);
+}
+
+.site-shell input:not([type="checkbox"]):not([type="radio"]),
+.site-shell select,
+.site-shell textarea {
+  color-scheme: light;
+  background-color: var(--site-surface) !important;
+  border-color: var(--site-line) !important;
+  color: #000000 !important;
+  caret-color: #000000;
+}
+
+.site-shell #contact {
+  background: #e6e8e4 !important;
+  border-top-color: #e6e8e4 !important;
+}
+
+.site-shell #contact .text-white {
+  color: #090805 !important;
+}
+
+.site-shell #contact .text-gray-300,
+.site-shell #contact .text-gray-400 {
+  color: #93a897 !important;
+}
+
+.site-shell #contact .text-gray-500 {
+  color: #7f8983 !important;
+}
+
+.site-shell #contact .text-primary {
+  color: #795e05 !important;
+}
+
+.site-shell #contact .glass-panel {
+  background: #f4f5f2;
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+}
+
+.site-shell #contact .glass-panel :is(h3, label) {
+  color: #25332c !important;
+}
+
+.site-shell #contact .glass-panel .text-gray-500 {
+  color: #66746b !important;
+}
+
+.site-shell #contact .glass-panel input,
+.site-shell #contact .glass-panel textarea {
+  background: #ffffff !important;
+  border-color: #d5ddd6 !important;
+  color: #111813 !important;
+  -webkit-text-fill-color: #111813 !important;
+  caret-color: #111813;
+}
+
+.site-shell #contact .glass-panel input::placeholder,
+.site-shell #contact .glass-panel textarea::placeholder {
+  color: #7b8980 !important;
+  -webkit-text-fill-color: #7b8980 !important;
+}
+
+.site-shell #contact .glass-panel input:-webkit-autofill,
+.site-shell #contact .glass-panel input:-webkit-autofill:hover,
+.site-shell #contact .glass-panel input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #111813 !important;
+  box-shadow: 0 0 0 1000px #ffffff inset;
+  caret-color: #111813;
+}
+
+.site-shell #contact .glass-panel button {
+  color: #14211b !important;
+}
+
+.site-shell footer {
+  background: rgba(214, 203, 166, 0.98) !important;
+  border-top-color: rgba(214, 203, 166, 0.98) !important;
+}
+
+.site-shell footer .text-white {
+  color: #000000 !important;
+}
+
+.site-shell footer .text-gray-400,
+.site-shell footer .text-gray-500,
+.site-shell footer .text-gray-600 {
+  color: #252e28 !important;
+}
+
+.site-shell footer .text-primary {
+  color: #7a6c3d !important;
+}
+
+.site-shell input::placeholder,
+.site-shell textarea::placeholder {
+  color: #18221b !important;
+}
+
+.site-shell .contact-form-field {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.site-shell .contact-form-field::placeholder {
+  color: #7b8980 !important;
+  -webkit-text-fill-color: #7b8980 !important;
+  opacity: 1;
+}
+
+.site-shell :is(button, a, input, textarea, select):focus-visible {
+  outline: 3px solid rgba(128, 97, 24, 0.45);
+  outline-offset: 3px;
+}
+
+.site-shell button:not(:disabled),
+.site-shell a[class*="px-"][class*="py-"] {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.site-shell button:not(:disabled):hover,
+.site-shell a[class*="bg-primary"]:hover {
+  transform: translateY(-1px);
+}
+
+.site-shell button:disabled {
+  cursor: wait;
+}
+
+.site-shell #home > section:first-child .text-white,
+.site-shell #home > section:first-child .text-gray-300,
+.site-shell #home > section:first-child .text-primary,
+.site-shell #projects .group .text-white,
+.site-shell [class*="bg-black/95"] .text-white,
+.site-shell [class*="bg-black/80"] .text-white,
+.site-shell [class*="bg-black/70"] .text-white,
+.site-shell [class*="bg-dark/60"].text-white {
+  color: #ffffff !important;
+}
+
+.site-shell #home > section:first-child .text-primary,
+.site-shell [class*="bg-dark/80"] .text-primary,
+.site-shell #projects .group .text-primary,
+.site-shell [class*="bg-dark/70"] .text-primary,
+.site-shell [class*="bg-dark/60"].text-primary {
+  color: #f2d36f !important;
+}
+
+.site-shell [class*="bg-black/80"] .text-gray-400,
+.site-shell [class*="bg-black/70"] .text-gray-400 {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .site-shell *,
+  .site-shell *::before,
+  .site-shell *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
