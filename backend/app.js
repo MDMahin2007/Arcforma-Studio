@@ -12,11 +12,10 @@ app.use(helmet());
 
 const frontendOrigin = process.env.FRONTEND_URL
   ? new URL(process.env.FRONTEND_URL).origin
-  : "https://jivon-vai-five.vercel.app";
+  : "https://arcforma-studio.vercel.app";
 const allowedOrigins = new Set([
   frontendOrigin,
-  "https://jivon-vai-five.vercel.app",
-  "https://jivon-vai.vercel.app",
+  "https://arcforma-studio.vercel.app",
   "http://localhost:5173",
   "http://127.0.0.1:5173",
 ]);

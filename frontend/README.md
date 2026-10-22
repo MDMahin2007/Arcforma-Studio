@@ -2,7 +2,7 @@
 
 The public portfolio website built with React and Vite. It contains the home page, project and service listings, project details, a visual gallery, and the contact form.
 
-**Live website:** [https://jivon-vai-five.vercel.app](https://jivon-vai-five.vercel.app)  
+**Live website:** [https://arcforma-studio.vercel.app](https://arcforma-studio.vercel.app)  
 **Backend API:** [https://arcforma-studio.onrender.com](https://arcforma-studio.onrender.com)
 
 ## Stack

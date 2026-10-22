@@ -2,7 +2,7 @@
 
 The Express API for contact enquiries. It validates submissions, stores them in MongoDB, and uses a MongoDB-backed outbox worker to send and retry email notifications.
 
-**Live website:** [https://jivon-vai-five.vercel.app](https://jivon-vai-five.vercel.app)  
+**Live website:** [https://arcforma-studio.vercel.app](https://arcforma-studio.vercel.app)  
 **Backend API:** [https://arcforma-studio.onrender.com](https://arcforma-studio.onrender.com) · [API health](https://arcforma-studio.onrender.com/)
 
 ## Stack
@@ -125,7 +125,7 @@ Set these variables in the Render service environment:
 
 ```text
 PORT=<provided by Render>
-FRONTEND_URL=https://jivon-vai-five.vercel.app
+FRONTEND_URL=https://arcforma-studio.vercel.app
 MONGODB_URI=<private MongoDB connection string>
 MONGODB_DB_NAME=ArcformaStudio
 CONTACT_RECIPIENT=<destination inbox>

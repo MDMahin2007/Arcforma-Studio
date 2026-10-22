@@ -2,7 +2,7 @@
 
 An architecture and interior design portfolio for a Dhaka-based studio. The site presents projects, visual galleries, services, and a home-page contact form backed by a Node.js API and MongoDB.
 
-**Live website:** [https://jivon-vai-five.vercel.app](https://jivon-vai-five.vercel.app)  
+**Live website:** [https://arcforma-studio.vercel.app](https://arcforma-studio.vercel.app)  
 **Backend API:** [https://arcforma-studio.onrender.com](https://arcforma-studio.onrender.com) · [API health](https://arcforma-studio.onrender.com/)
 
 ## Highlights
@@ -99,7 +99,7 @@ Set the following in the Render service environment. Never put actual secrets in
 | Variable | Purpose |
 | --- | --- |
 | `PORT` | HTTP port supplied by Render |
-| `FRONTEND_URL` | Production frontend origin: `https://jivon-vai-five.vercel.app` |
+| `FRONTEND_URL` | Production frontend origin: `https://arcforma-studio.vercel.app` |
 | `MONGODB_URI` | MongoDB connection string |
 | `MONGODB_DB_NAME` | Database name; defaults to `ArcformaStudio` |
 | `RESEND_API_KEY` | Resend API key |

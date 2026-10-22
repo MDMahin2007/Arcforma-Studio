@@ -54,11 +54,11 @@ test("allows the local Vite frontend to submit contact messages", async () => {
     );
 });
 
-test("continues to allow the deployed Vercel frontend", async () => {
+test("allows the deployed Arcforma Studio Vercel frontend", async () => {
     const response = await fetch(`${baseUrl}/api/contact/send-email`, {
         method: "OPTIONS",
         headers: {
-            Origin: "https://jivon-vai-five.vercel.app",
+            Origin: "https://arcforma-studio.vercel.app",
             "Access-Control-Request-Method": "POST",
             "Access-Control-Request-Headers": "content-type",
         },
@@ -67,24 +67,7 @@ test("continues to allow the deployed Vercel frontend", async () => {
     assert.equal(response.status, 204);
     assert.equal(
         response.headers.get("access-control-allow-origin"),
-        "https://jivon-vai-five.vercel.app",
-    );
-});
-
-test("allows the jivon-vai Vercel frontend alias", async () => {
-    const response = await fetch(`${baseUrl}/api/contact/send-email`, {
-        method: "OPTIONS",
-        headers: {
-            Origin: "https://jivon-vai.vercel.app",
-            "Access-Control-Request-Method": "POST",
-            "Access-Control-Request-Headers": "content-type",
-        },
-    });
-
-    assert.equal(response.status, 204);
-    assert.equal(
-        response.headers.get("access-control-allow-origin"),
-        "https://jivon-vai.vercel.app",
+        "https://arcforma-studio.vercel.app",
     );
 });
 
